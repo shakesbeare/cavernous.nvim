@@ -40,9 +40,9 @@ local theme = lush(function(injected_functions)
     CursorColumn                                    { bg = p.gray3 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine                                      { bg = p.gray3 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory                                       { fg = p.blue.darken(-20) }, -- Directory names (and other special names in listings)
-    DiffAdd                                         { bg = p.green, fg = p.black }, -- Diff mode: Added line |diff.txt|
-    DiffChange                                      { bg = p.gray5, fg = p.black }, -- Diff mode: Changed line |diff.txt|
-    DiffDelete                                      { bg = p.red, fg = p.black }, -- Diff mode: Deleted line |diff.txt|
+    DiffAdd                                         { bg = p.strong_green.darken(80), fg = p.strong_green }, -- Diff mode: Added line |diff.txt|
+    DiffChange                                      { bg = p.yellow.darken(80), fg = p.yellow }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete                                      { bg = p.red.darken(80), fg = p.red }, -- Diff mode: Deleted line |diff.txt|
     -- DiffText                                     { }, -- Diff mode: Changed text within a changed line |diff.txt|
     -- EndOfBuffer                                  { }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
     TermCursor                                      { bg = p.white, fg = p.black }, -- Cursor in a focused terminal
@@ -67,13 +67,11 @@ local theme = lush(function(injected_functions)
     -- MoreMsg                                      { }, -- |more-prompt|
     -- NonText                                      { }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal                                          { bg = "None", fg = p.light_blue }, -- Normal text
-    NormalFloat                                     { bg = "None" }, -- Normal text in floating windows.
-    -- FloatBorder                                  { }, -- Border of floating windows.
     -- FloatTitle                                   { }, -- Title of floating windows.
     -- NormalNC                                     { }, -- normal text in non-current windows
+        -- aoeu
     -- Pmenu                                        { }, -- Popup menu: Normal item.
-    PmenuSel                                     { bg = p.white }, -- Popup menu: Selected item.
-
+    PmenuSel                                     { fg = p.black, bg = p.yellow }, -- Popup menu: Selected item.
     -- PmenuKind                                    { }, -- Popup menu: Normal item "kind"
     -- PmenuKindSel                                 { }, -- Popup menu: Selected item "kind"
     -- PmenuExtra                                   { }, -- Popup menu: Normal item "extra text"
@@ -88,8 +86,8 @@ local theme = lush(function(injected_functions)
     -- SpellCap                                     { }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     -- SpellLocal                                   { }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare                                    { }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    -- StatusLine                                   { }, -- Status line of current window
-    -- StatusLineNC                                 { }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLine                                   { bg = "None" }, -- Status line of current window
+    StatusLineNC                                 { bg = p.gray1 }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     -- TabLine                                      { }, -- Tab pages line, not active tab page label
     -- TabLineFill                                  { }, -- Tab pages line, where there are no labels
     -- TabLineSel                                   { }, -- Tab pages line, active tab page label
