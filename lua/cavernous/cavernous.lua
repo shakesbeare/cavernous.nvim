@@ -23,7 +23,7 @@ end
 
 local lush = require('lush')
 local hsl = lush.hsl
-local p = require('lush_theme.palette')
+local p = require('cavernous.palette')
 
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
@@ -69,7 +69,6 @@ local theme = lush(function(injected_functions)
     Normal                                          { bg = "None", fg = p.light_blue }, -- Normal text
     -- FloatTitle                                   { }, -- Title of floating windows.
     -- NormalNC                                     { }, -- normal text in non-current windows
-        -- aoeu
     -- Pmenu                                        { }, -- Popup menu: Normal item.
     PmenuSel                                     { fg = p.black, bg = p.yellow }, -- Popup menu: Selected item.
     -- PmenuKind                                    { }, -- Popup menu: Normal item "kind"
@@ -134,7 +133,7 @@ local theme = lush(function(injected_functions)
     -- Underlined                                   { gui = "underline" }, -- Text that stands out, HTML links
     -- Ignore                                       { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
     -- Error                                        { }, -- Any erroneous construct
-    Todo                                         { fg = p.strong_green, bg = p.strong_green.darken(85), bold = true, }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Todo                                            { fg = p.strong_green, bg = p.strong_green.darken(85), bold = true, }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
     -- LspReferenceText                             { } , -- Used for highlighting "text" references
     -- LspReferenceRead                             { } , -- Used for highlighting "read" references
     -- LspReferenceWrite                            { } , -- Used for highlighting "write" references

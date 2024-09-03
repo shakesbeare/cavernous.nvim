@@ -1,20 +1,88 @@
--- You probably always want to set this in your vim file
-vim.opt.background = 'dark'
-vim.g.colors_name = 'cavernous'
+local colors = {
+-- content here will not be touched
+-- PATCH_OPEN
+Normal = {fg = "#B3E5FF", bg = "None"},
+Boolean = {fg = "#80C4FF"},
+Character = {fg = "#80FF80"},
+Comment = {fg = "#BFBFBF"},
+Conditional = {fg = "#D580FF"},
+Constant = {fg = "#ABD7ED"},
+CurSearch = {fg = "#000000", bg = "#E7EF8F"},
+Cursor = {fg = "#000000", bg = "#E6E6E6"},
+CursorColumn = {bg = "#737373"},
+CursorIM = {fg = "#000000", bg = "#E6E6E6"},
+CursorLine = {bg = "#737373"},
+Define = {fg = "#FFBF80"},
+Delimiter = {fg = "#E6E6E6"},
+DiagnosticError = {fg = "#FF8080", bg = "#290000"},
+DiagnosticHint = {fg = "#D580FF", bg = "#1B0029"},
+DiagnosticInfo = {fg = "#B3E5FF", bg = "#001F2E"},
+DiagnosticOk = {fg = "#E7EF8F", bg = "None"},
+DiagnosticUnderlineError = {fg = "#FF8080", bg = "#290000", undercurl = true},
+DiagnosticUnderlineHint = {fg = "#D580FF", bg = "#1B0029", undercurl = true},
+DiagnosticUnderlineInfo = {fg = "#B3E5FF", bg = "#001F2E", undercurl = true},
+DiagnosticUnderlineOk = {fg = "#E7EF8F", bg = "None", undercurl = true},
+DiagnosticUnderlineWarn = {fg = "#E7EF8F", bg = "#212405", undercurl = true},
+DiagnosticWarn = {fg = "#E7EF8F", bg = "#212405"},
+DiffAdd = {fg = "#5BEC13", bg = "#122F04"},
+DiffChange = {fg = "#E7EF8F", bg = "#3E430A"},
+DiffDelete = {fg = "#FF8080", bg = "#4D0000"},
+Directory = {fg = "#99CFFF"},
+ErrorMsg = {fg = "#FF8080"},
+Exception = {fg = "#FF8080"},
+Float = {fg = "#ABD7ED"},
+Folded = {fg = "#000000", bg = "#BFBFBF"},
+Function = {fg = "#E7EF8F"},
+Identifier = {fg = "#B3E5FF"},
+IncSearch = {fg = "#000000", bg = "#E7EF8F"},
+Keyword = {fg = "#D580FF"},
+Label = {fg = "#D580FF"},
+Macro = {fg = "#FFBF80"},
+Number = {fg = "#ABD7ED"},
+Operator = {fg = "#ABD7ED"},
+PmenuSel = {fg = "#000000", bg = "#E7EF8F"},
+Repeat = {fg = "#D580FF"},
+Special = {fg = "#80C4FF", bold = true},
+StatusLine = {bg = "None"},
+StatusLineNC = {bg = "#262626"},
+String = {fg = "#80FF80"},
+Substitute = {fg = "#000000", bg = "#E7EF8F"},
+TermCursor = {fg = "#000000", bg = "#E6E6E6"},
+TermCursorNC = {fg = "#000000", bg = "#E6E6E6"},
+Todo = {fg = "#5BEC13", bg = "#0F2603", bold = true},
+Type = {fg = "#80C4FF"},
+VertSplit = {fg = "#BFBFBF"},
+Visual = {bg = "#4D4D4D"},
+lCursor = {fg = "#000000", bg = "#E6E6E6"},
+["@comment.documentation.rust"] = {fg = "#FFA347"},
+["@constant.macro"] = {fg = "#FFBF80"},
+["@function.macro.rust"] = {fg = "#FFBF80"},
+["@lsp.type.decorator.rust"] = {fg = "#FFBF80"},
+["@lsp.type.selfKeyword.rust"] = {fg = "#FF8080", bold = true},
+["@lsp.typemod.comment.documentation.rust"] = {fg = "#FFA347"},
+["@lsp.typemod.decorator.attribute.rust"] = {fg = "#FFBF80"},
+["@lsp.typemod.decorator.defaultLibrary.rust"] = {fg = "#FFBF80"},
+["@lsp.typemod.decorator.library.rust"] = {fg = "#FFBF80"},
+["@lsp.typemod.selfKeyword.declaration.rust"] = {fg = "#FF8080", bold = true},
+["@lsp.typemod.selfKeyword.mutable.rust"] = {underline = true},
+["@lsp.typemod.selfKeyword.reference.rust"] = {fg = "#FF8080", bold = true},
+["@lsp.typemod.variable.mutable.rust"] = {underline = true},
+["@module"] = {fg = "#FFBF80"},
+["@namespace"] = {fg = "#FFBF80"},
+["@text.todo"] = {},
+["@type.builtin.rust"] = {},
+["@variable"] = {},
+["@variable.builtin.rust"] = {fg = "#FF8080", bold = true},
+-- PATCH_CLOSE
+-- content here will not be touched
+}
 
--- By setting our module to nil, we clear lua's cache,
--- which means the require ahead will *always* occur.
---
--- This isn't strictly required but it can be a useful trick if you are
--- incrementally editing your config a lot and want to be sure your themes
--- changes are being picked up without restarting neovim.
---
--- Note if you're working in on your theme and have :Lushify'd the buffer,
--- your changes will be applied with our without the following line.
---
--- The performance impact of this call can be measured in the hundreds of
--- *nanoseconds* and such could be considered "production safe".
-package.loaded['lush_theme.cavernous'] = nil
+-- colorschemes generally want to do this
+vim.cmd("highlight clear")
+vim.cmd("set t_Co=256")
+vim.cmd("let g:colors_name='my_theme'")
 
--- include our theme file and pass it to lush to apply
-require('lush')(require('lush_theme.cavernous'))
+-- apply highlight groups
+for group, attrs in pairs(colors) do
+  vim.api.nvim_set_hl(0, group, attrs)
+end
