@@ -40,13 +40,13 @@ The background is from Hyprland.
 ## Lazy.nvim
 
 ```lua
-	{
-		"shakesbeare/cavernous.nvim",
-		name = "cavernous",
-		config = function()
-			vim.cmd[[colorscheme cavernous]]
-		end
-	}
+{
+    "shakesbeare/cavernous.nvim",
+    name = "cavernous",
+    config = function()
+        vim.cmd[[colorscheme cavernous]]
+    end
+}
 
 ```
 
