@@ -35,6 +35,20 @@ The background is from Hyprland.
 
 ![image](https://github.com/user-attachments/assets/ea9a7d99-816a-49ea-bac6-f82a6de4f646)
 
+# Setup
+
+## Lazy.nvim
+
+```lua
+	{
+		"shakesbeare/cavernous.nvim",
+		name = "cavernous",
+		config = function()
+			vim.cmd[[colorscheme cavernous]]
+		end
+	}
+
+```
 
 # Contributing
 
