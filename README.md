@@ -21,7 +21,7 @@ The goals were accomplished with limited success. Some compromises were necessar
 delimiters. Cavernous relies pretty heavily on semantic tokens, so your mileage may vary depending 
 on the language server used and if you have semantic tokens enabled in Neovim.
 
-The background is from Hyprland.
+The background is from Hyprland. The font is Berkeley Mono.
 
 ## Rust
 
