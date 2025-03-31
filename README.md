@@ -33,7 +33,8 @@ The background is from Hyprland.
 
 ## C++
 
-![image](https://github.com/user-attachments/assets/5dc5a7d4-1f06-4b60-8af8-a8fc5fd88610)
+![image](https://github.com/user-attachments/assets/ea9a7d99-816a-49ea-bac6-f82a6de4f646)
+
 
 # Contributing
 
