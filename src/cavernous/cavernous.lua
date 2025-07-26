@@ -167,7 +167,7 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignOk                             { } , -- Used for "Ok" signs in sign column.
     manSectionHeading                               { fg=p.white, bg=p.white.darken(90) },
     manOptionDesc                                   { fg=p.green },
-    manBold                                         { fg=p.green, bold=true },
+    manBold                                         { bg=p.gray3, bold=true },
     -- sym"@text.literal"                           { }, -- Comment
     -- sym"@text.reference"                         { }, -- Identifier
     -- sym"@text.title"                             { }, -- Title
