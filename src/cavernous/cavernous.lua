@@ -23,7 +23,7 @@ end
 
 local lush = require('lush')
 local hsl = lush.hsl
-local p = require('cavernous.palette')
+local p = require('src.cavernous.palette')
 
 
 -- LSP/Linters mistakenly show `undefined global` errors in the spec, they may
@@ -165,6 +165,8 @@ local theme = lush(function(injected_functions)
     -- DiagnosticSignInfo                           { } , -- Used for "Info" signs in sign column.
     -- DiagnosticSignHint                           { } , -- Used for "Hint" signs in sign column.
     -- DiagnosticSignOk                             { } , -- Used for "Ok" signs in sign column.
+    manSectionHeading                               { fg=p.white, bg=p.white.darken(90) },
+    manOptionDesc                                   { fg=p.green },
     -- sym"@text.literal"                           { }, -- Comment
     -- sym"@text.reference"                         { }, -- Identifier
     -- sym"@text.title"                             { }, -- Title
@@ -225,7 +227,6 @@ local theme = lush(function(injected_functions)
     sym"@lsp.typemod.selfKeyword.reference.rust"    { fg = p.red, bold = true },
     sym"@lsp.typemod.variable.mutable.rust"         { underline = true },
     sym"@lsp.typemod.selfKeyword.mutable.rust"      { underline = true },
-
 }
 
 end)
