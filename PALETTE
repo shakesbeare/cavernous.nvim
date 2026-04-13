@@ -23,5 +23,5 @@ bright_cyan    97,214,214  180,59,61  #61D6D6
 white          230,230,230 0,0,90     #E6E6E6
 bright_white   242,242,242 0,0,95     #F2F2F2
 orange         255,191,128 30,100,75  #FFBF80
-bright_orange  223,138,77  25,70,59   #DF8A4D
+bright_orange  255,163,71  30,100,64  #FFA347
 
