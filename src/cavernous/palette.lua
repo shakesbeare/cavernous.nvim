@@ -4,7 +4,6 @@ local colors = {
     jet_black                = hsl(0, 0, 0),
     black                    = hsl(12, 12, 12),
     gray1                    = hsl(0, 0, 15),
-    slate                    = hsl(249, 15, 28),
     gray2                    = hsl(0, 0, 30),
     gray3                    = hsl(0, 0, 45),
     gray4                    = hsl(0, 0, 60),
